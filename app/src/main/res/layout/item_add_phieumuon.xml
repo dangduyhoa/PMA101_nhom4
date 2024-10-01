@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--    <TextView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Tien thue"-->
+<!--        android:textSize="20sp"/>-->
+<!--    <EditText-->
+<!--        android:id="@+id/txttien"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:hint="Nhap tien"-->
+<!--        android:textSize="20sp"/>-->
+
+
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+
+        android:layout_margin="10dp">
+
+        <TextView
+            android:layout_width="310dp"
+            android:layout_height="50dp"
+            android:background="@drawable/khungtron_tren"
+            android:gravity="center"
+
+            android:text="Thêm phiếu mượn"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/khungtron_duoi"
+            android:padding="20dp"
+            android:orientation="vertical">
+
+
+            <!--    mapm la tu dong tang-->
+            <!--    matv la pai de dang spiner-->
+            <!--    do spinner sach va thanh vien ne minh pau tao DAO-->
+            <!--    mtt la dang nhap nen khong can-->
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="Chọn thành viên"
+                android:textSize="18sp" />
+            <Spinner
+                android:id="@+id/spntv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Chọn sách"
+                android:textStyle="bold"
+                android:textSize="18sp" />
+            <Spinner
+                android:id="@+id/spnsach"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/themPM_A"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:text="Thêm"
+                    android:textColor="@color/white"
+                    android:backgroundTint="#00BCD4"/>
+                <Button
+                    android:id="@+id/huyPM_A"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Huy"
+                    android:textColor="@color/white"
+                    android:backgroundTint="#00BCD4"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!--    <TextView-->
+        <!--        android:layout_width="match_parent"-->
+        <!--        android:layout_height="wrap_content"-->
+        <!--        android:text="Tien thue"-->
+        <!--        android:textSize="20sp"/>-->
+        <!--    <EditText-->
+        <!--        android:id="@+id/txttien"-->
+        <!--        android:layout_width="match_parent"-->
+        <!--        android:layout_height="wrap_content"-->
+        <!--        android:hint="Nhap tien"-->
+        <!--        android:textSize="20sp"/>-->
+    </LinearLayout>
+
+</LinearLayout>
