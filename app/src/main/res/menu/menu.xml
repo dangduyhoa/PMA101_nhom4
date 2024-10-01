@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/phieumuon" android:title="Quản lý phiếu mượn"/>
+    <item android:id="@+id/loaisach" android:title="Quản lý loại sách"/>
+    <item android:id="@+id/sach" android:title="Quản lý sách"/>
+    <item android:id="@+id/thanhvien" android:title="Quản lý thành viên"/>
+    <item android:title="Thong ke">
+        <menu>
+            <item android:id="@+id/top10" android:title="Top 10 bán nhiều nhất"/>
+            <item android:id="@+id/doanhthu" android:title="Doanh thu"/>
+        </menu>
+    </item>
+    <item android:title="Người dùng">
+        <menu>
+            <item android:id="@+id/taotk" android:title="Tạo tài khoản"/>
+            <item android:id="@+id/matkhau" android:title="Đổi mật khẩu"/>
+            <item android:id="@+id/thoat" android:title="Thoát"/>
+        </menu>
+    </item>
+</menu>
