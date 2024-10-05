@@ -9,6 +9,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
@@ -16,9 +17,14 @@ import android.view.MenuItem;
 import android.widget.FrameLayout;
 
 
-
+import com.example.myapplication.frag.frag_doimk;
 import com.example.myapplication.frag.frag_loaisach;
+import com.example.myapplication.frag.frag_phieumuon;
 import com.example.myapplication.frag.frag_sach;
+import com.example.myapplication.frag.frag_thanhvien;
+import com.example.myapplication.frag.frag_top19;
+import com.example.myapplication.frag.frg_doanhthufragment;
+import com.example.myapplication.frag.taotaikhoan;
 import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity {
@@ -43,34 +49,34 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 FragmentManager fragmentManager = getSupportFragmentManager();
                 if(item.getItemId() ==  R.id.phieumuon){
-//                    Fragment fragment = new frag_phieumuon();
-//                    fragmentManager.beginTransaction().replace(R.id.framlayout, fragment).commit();
+                    Fragment fragment = new frag_phieumuon();
+                    fragmentManager.beginTransaction().replace(R.id.framlayout, fragment).commit();
                 }else if (item.getItemId() == R.id.loaisach) {
                     Fragment fragment = new frag_loaisach();
                     fragmentManager.beginTransaction().replace(R.id.framlayout, fragment).commit();
                 }else if (item.getItemId() == R.id.taotk) {
-//                    Fragment fragment = new taotaikhoan();
-//                    fragmentManager.beginTransaction().replace(R.id.framlayout, fragment).commit();
+                    Fragment fragment = new taotaikhoan();
+                    fragmentManager.beginTransaction().replace(R.id.framlayout, fragment).commit();
                 }else if (item.getItemId() == R.id.sach) {
                     Fragment fragment = new frag_sach();
                     fragmentManager.beginTransaction().replace(R.id.framlayout, fragment).commit();
                 }else if (item.getItemId() == R.id.thanhvien) {
-//                    Fragment fragment = new frag_thanhvien();
-//                    fragmentManager.beginTransaction().replace(R.id.framlayout, fragment).commit();
+                    Fragment fragment = new frag_thanhvien();
+                    fragmentManager.beginTransaction().replace(R.id.framlayout, fragment).commit();
                 }else if (item.getItemId() == R.id.matkhau) {
-//                    Fragment fragment = new frag_doimk();
-//                    fragmentManager.beginTransaction().replace(R.id.framlayout, fragment).commit();
+                    Fragment fragment = new frag_doimk();
+                    fragmentManager.beginTransaction().replace(R.id.framlayout, fragment).commit();
                 }else if (item.getItemId() == R.id.top10) {
-//                    Fragment fragment = new frag_top19();
-//                    fragmentManager.beginTransaction().replace(R.id.framlayout, fragment).commit();
+                    Fragment fragment = new frag_top19();
+                    fragmentManager.beginTransaction().replace(R.id.framlayout, fragment).commit();
                 }else if (item.getItemId() == R.id.doanhthu) {
-//                    Fragment fragment = new frg_doanhthufragment();
-//                    fragmentManager.beginTransaction().replace(R.id.framlayout, fragment).commit();
+                    Fragment fragment = new frg_doanhthufragment();
+                    fragmentManager.beginTransaction().replace(R.id.framlayout, fragment).commit();
                 }else if (item.getItemId() == R.id.thoat) {
-//                    startActivity(new Intent(MainActivity.this, dangnhap.class));
+                    startActivity(new Intent(MainActivity.this, dangnhap.class));
                 }else{
-//                    Fragment fragment = new frag_phieumuon();
-//                    fragmentManager.beginTransaction().replace(R.id.framlayout, fragment).commit();
+                    Fragment fragment = new frag_phieumuon();
+                    fragmentManager.beginTransaction().replace(R.id.framlayout, fragment).commit();
                 }
                 dra.closeDrawer(GravityCompat.START);
                 setTitle(item.getTitle());
