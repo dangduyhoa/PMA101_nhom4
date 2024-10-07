@@ -6,18 +6,19 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
+    android:background="#EDECC4"
     tools:context=".mhc2">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nguyễn Văn A"
+        android:text="Nhóm - 4"
         android:textSize="28sp"
         android:textColor="@color/red"
         android:layout_margin="10dp"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Ph19888"
+        android:text="PMA101"
         android:textSize="28sp"
         android:textColor="@color/red"
         android:layout_margin="10dp"/>

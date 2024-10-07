@@ -22,10 +22,10 @@
             android:name=".dangnhap"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".manhinhchao"
             android:exported="false" />
         <activity
-            android:name=".manhinhchao"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

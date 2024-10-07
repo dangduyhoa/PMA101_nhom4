@@ -42,6 +42,10 @@ public class PhieuMuon {
         this.tienthue = tienthue;
     }
 
+    public PhieuMuon(int trasach) {
+        this.trasach = trasach;
+    }
+
     public String getMatt() {
         return matt;
     }

@@ -5,7 +5,7 @@ public class ThanhVien {
     private String hoten;
     private String namsinh;
     private String gioitinh;
-    private double luong;
+    private int luong;
 
     public ThanhVien(int matv, String hoten, String namsinh) {
         this.matv = matv;
@@ -16,7 +16,7 @@ public class ThanhVien {
     public ThanhVien() {
     }
 
-    public ThanhVien(int matv, String hoten, String namsinh, String gioitinh, double luong) {
+    public ThanhVien(int matv, String hoten, String namsinh, String gioitinh, int luong) {
         this.matv = matv;
         this.hoten = hoten;
         this.namsinh = namsinh;
@@ -56,11 +56,11 @@ public class ThanhVien {
         this.gioitinh = gioitinh;
     }
 
-    public double getLuong() {
+    public int getLuong() {
         return luong;
     }
 
-    public void setLuong(double luong) {
+    public void setLuong(int luong) {
         this.luong = luong;
     }
 }

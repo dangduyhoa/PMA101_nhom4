@@ -2,6 +2,7 @@ package com.example.myapplication.frag;
 
 import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -10,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -33,6 +35,10 @@ public class frag_thanhvien extends Fragment {
     ArrayList<ThanhVien> list;
     ThanhVienAdapter adapter;
     RecyclerView rcv;
+    private Context context;
+    Spinner gioitinh;
+    Spinner spn_soluong;
+    Spinner spn_nam;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -63,6 +69,7 @@ public class frag_thanhvien extends Fragment {
         builder.setView(view);
         ImageView txtup = view.findViewById(R.id.txttv_up_add_U);
         ImageView txtadd = view.findViewById(R.id.txttv_up_add_A);
+
         txtadd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -72,6 +79,11 @@ public class frag_thanhvien extends Fragment {
                 builder1.setView(view1);
                 EditText txtten = view1.findViewById(R.id.txthotenTV_A);
                 EditText txtnam = view1.findViewById(R.id.txtnamsinhTV_A);
+//                EditText txtluong = view1.findViewById(R.id.txtluongTV_A);
+//               Spinner spn_nam = view1.findViewById(R.id.Sprin_gioitinh);
+
+
+
                 Button btnadd = view1.findViewById(R.id.themTV_A);
                 Button btnhuy = view1.findViewById(R.id.huyTV_A);
                 AlertDialog alertDialog = builder1.create();
@@ -80,22 +92,12 @@ public class frag_thanhvien extends Fragment {
                     public void onClick(View v) {
 
                         try{
-//                            if (txtgioitinh.getText().toString().equals("")){
-//                                Toast.makeText(getContext(), "Nhap hết thộng tin", Toast.LENGTH_SHORT).show();
-//                            }
+
 
                             String ten = txtten.getText().toString();
                             String nam = txtnam.getText().toString();
-//                            String gioi = txtgioitinh.getText().toString();
-//                            int luong = Integer.parseInt(txtluong.getText().toString());
 
-//                            if (txtluong.getText().toString().equals("")){
-//                                Toast.makeText(getContext(), "Nhap hết thộng tin", Toast.LENGTH_SHORT).show();
-//                            }else if(luong  < 1000000){
-//                                Toast.makeText(getContext(), "Luong phai lon hon 1 000 000", Toast.LENGTH_SHORT).show();
-//                            }else{
-//
-//                            }
+
                             if (txtten.getText().toString().equals("")){
                                 Toast.makeText(getContext(), "Nhap hết thộng tin", Toast.LENGTH_SHORT).show();
                                 return;
@@ -173,4 +175,7 @@ public class frag_thanhvien extends Fragment {
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
     }
+
+
+
 }
