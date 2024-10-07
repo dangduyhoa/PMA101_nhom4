@@ -33,19 +33,19 @@ public class ThanhVienAdapter extends RecyclerView.Adapter<ThanhVienAdapter.view
 
     @NonNull
     @Override
-    public viewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ThanhVienAdapter.viewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = ((Activity)context).getLayoutInflater();
         View view = inflater.inflate(R.layout.item_thanhvien, parent, false);
         return new viewholder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull viewholder holder, int position) {
+    public void onBindViewHolder(@NonNull ThanhVienAdapter.viewholder holder, int position) {
         holder.txtma.setText("Mã thành viên: " + Integer.toString(list.get(position).getMatv()));
         holder.txttem.setText(list.get(position).getHoten());
         holder.txtnamsinh.setText(list.get(position).getNamsinh());
         holder.txtgioitinh.setText(list.get(position).getGioitinh());
-        holder.txtluong.setText(Double.toString(list.get(position).getLuong()));
+        holder.txtluong.setText(Integer.toString(list.get(position).getLuong()));
         //nếu nam chữ đỏ, nữ chữ vàng
         if (list.get(position).getGioitinh().equals("nam")){
             holder.txtgioitinh.setTextColor(Color.parseColor("#ff0000"));

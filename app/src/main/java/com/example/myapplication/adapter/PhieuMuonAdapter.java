@@ -1,9 +1,11 @@
 package com.example.myapplication.adapter;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,7 +42,7 @@ public class PhieuMuonAdapter extends RecyclerView.Adapter<PhieuMuonAdapter.view
     }
 
     @Override
-    public void onBindViewHolder(@NonNull viewholder holder, int position) {
+    public void onBindViewHolder(@NonNull viewholder holder, @SuppressLint("RecyclerView") int position) {
         holder.txtphieumuon.setText( "Mã phiếu mượn: " + Integer.toString(list.get(position).getMapm()));
 //        holder.txtmatv.setText("Ma thanhvien:  " + list.get(position).getMatv());
         holder.txttentv.setText(list.get(position).getTentv());
@@ -56,7 +58,12 @@ public class PhieuMuonAdapter extends RecyclerView.Adapter<PhieuMuonAdapter.view
 //        }else{
 //            holder.txtgioi.setTextColor(context.getResources().getColor(R.color.yellow));
 //        }
+        if (list.get(position).getTrasach()==1){
+            holder.txttrangthai.setTextColor(Color.parseColor("#FF0000"));
+        }
+        else {
 
+        }
 
         if(list.get(position).getTrasach() == 1){
             trangthai ="da tra sach";
@@ -69,20 +76,34 @@ public class PhieuMuonAdapter extends RecyclerView.Adapter<PhieuMuonAdapter.view
             @Override
             public void onClick(View v) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(context);
-                builder.setTitle("Ban co muon xoa?");
-                builder.setPositiveButton("Xoa", new DialogInterface.OnClickListener() {
+                builder.setTitle("Xác nhận đã trả sách ?");
+                builder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        if(dao.delete(list.get(holder.getAdapterPosition()).getMapm())){
+                     int trasach1 = 1;
+                     PhieuMuon pm = list.get(position);
+                     pm.setTrasach(trasach1);
+                        boolean kt = dao.capnhattrangthai(pm);
+                        if(kt){
                             list.clear();
                             list.addAll(dao.getDSphieumuon());
-                            notifyDataSetChanged();
-                            dialog.dismiss();
-                            Toast.makeText(context, "Da xoa", Toast.LENGTH_SHORT).show();
+                            adapter.notifyDataSetChanged();
+
+                            Toast.makeText(context, "Succesfully", Toast.LENGTH_SHORT).show();
+                        }else{
+                            Toast.makeText(context, "Fail", Toast.LENGTH_SHORT).show();
                         }
+
+//                        if(dao.delete(list.get(holder.getAdapterPosition()).getMapm())){
+//                            list.clear();
+//                            list.addAll(dao.getDSphieumuon());
+//                            notifyDataSetChanged();
+//                            dialog.dismiss();
+//                            Toast.makeText(context, "Da xoa", Toast.LENGTH_SHORT).show();
+//                        }
                     }
                 });
-                builder.setNegativeButton("Huy", new DialogInterface.OnClickListener() {
+                builder.setNegativeButton("NO", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 

@@ -70,6 +70,17 @@ public class PhieuMuonDao {
         }
         return false;
     }
+    public  boolean capnhattrangthai(PhieuMuon pm){
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+        Cursor cursor = db.rawQuery("select * from phieumuon where mapm = ?", new String[]{String.valueOf(pm.getMapm())});
+        if(cursor.getCount() > 0) {
+            ContentValues values = new ContentValues();
+            values.put("trasach", pm.getTrasach());
+            long row = db.update("phieumuon",  values,  "mapm = ?", new String[]{String.valueOf(pm.getMapm())});
+            return (row>0);
+        }
+        return false;
+    }
     public boolean delete(int mapm){
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         Cursor cursor = db.rawQuery("select * from phieumuon where mapm = ?", new String[]{String.valueOf(mapm)});

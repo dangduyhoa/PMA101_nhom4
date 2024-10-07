@@ -28,7 +28,7 @@ public class ThanhVienDao {
             if(cursor.getCount() > 0){
                 cursor.moveToFirst();
                 while (!cursor.isAfterLast()){
-                    list.add(new ThanhVien(cursor.getInt(0), cursor.getString(1), cursor.getString(2), cursor.getString(3), cursor.getDouble(4) ));
+                    list.add(new ThanhVien(cursor.getInt(0), cursor.getString(1), cursor.getString(2), cursor.getString(3), cursor.getInt(4) ));
                     cursor.moveToNext();
                 }
             }
@@ -45,7 +45,16 @@ public class ThanhVienDao {
         long kt = db.insert("thanhvien" , null, values);
         return (kt>0);
     }
-
+    public boolean themthanhvien1(String hoten, String namsinh,String gioitinh,int luong){
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("hoten", hoten);
+        values.put("namsinh", namsinh);
+        values.put("gioitinh", gioitinh);
+        values.put("luong", luong);
+        long kt = db.insert("thanhvien" , null, values);
+        return (kt>0);
+    }
     public  boolean capnhatthanhvien(ThanhVien tv){
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         Cursor cursor = db.rawQuery("select * from thanhvien where matv = ?", new String[]{String.valueOf(tv.getMatv())});

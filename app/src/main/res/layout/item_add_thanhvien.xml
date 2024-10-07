@@ -55,6 +55,20 @@ android:layout_height="wrap_content">
             android:textStyle="bold"
             android:layout_height="wrap_content"
             android:hint="Nhap nam sinh"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="Lương"
+            android:textSize="18sp" />
+<!--        <EditText-->
+<!--            android:id="@+id/txtluongTV_A"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:textStyle="bold"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:hint="Nhập Lương"/>-->
+
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
