@@ -2,12 +2,15 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
+    tools:context=".thanhvien.dangnhap_thanhvien"
     android:orientation="vertical"
-    android:background="@drawable/t4"
-    tools:context=".dangnhap">
+    android:background="@drawable/b1"
+    android:gravity="center"
+    >
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -21,18 +24,18 @@
             android:textColor="@color/white"
             android:layout_margin="40dp"
             android:textStyle="bold" />
-    <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:src="@drawable/nn"
-        android:layout_margin="40dp"
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/nn"
+            android:layout_margin="40dp"
 
-        android:layout_gravity="end"/>
+            android:layout_gravity="end"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="10dp"
         android:orientation="horizontal">
         <ImageView
             android:layout_width="wrap_content"
@@ -46,8 +49,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColorHint="@color/white"
-            android:hint="username : "
-            android:textColor="@color/white"
+            android:hint="Mã thành viên  "
+            android:textColor="@color/black"
             android:padding="15dp"
             android:textStyle="bold"
             />
@@ -69,8 +72,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColorHint="@color/white"
-            android:hint="password : "
-            android:textColor="@color/white"
+            android:hint="Tên thành viên"
+            android:textColor="@color/black"
             android:padding="15dp"
             android:textStyle="bold" />
     </LinearLayout>
@@ -83,7 +86,7 @@
         android:layout_marginTop="40dp"
         android:textSize="20sp"
         android:textColor="@color/white"
-        android:backgroundTint="#FF0055"
+        android:backgroundTint="#6A00FF"
         android:textStyle="bold"
         />
 

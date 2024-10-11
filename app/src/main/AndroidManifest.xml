@@ -13,19 +13,22 @@
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="31">
         <activity
-            android:name=".mhc2"
+            android:name=".thanhvien.MainActivity_thanhvien"
             android:exported="false" />
         <activity
-            android:name=".ManHinhBT"
+            android:name=".thanhvien.dangnhap_thanhvien"
+            android:exported="false" />
+        <activity
+            android:name=".luachon"
             android:exported="false" />
         <activity
             android:name=".dangnhap"
             android:exported="false" />
         <activity
-            android:name=".manhinhchao"
+            android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".manhinhchao"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1,9 +1,11 @@
 package com.example.myapplication.dao;
 
+import static android.content.Context.MODE_PRIVATE;
 import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
@@ -15,9 +17,11 @@ import java.util.ArrayList;
 
 public class ThanhVienDao {
     private final DbHelper dbHelper;
+    SharedPreferences sharedPreferences;
 
     public ThanhVienDao(Context context) {
         dbHelper = new DbHelper(context);
+        sharedPreferences = context.getSharedPreferences("Thanhvien", MODE_PRIVATE);
     }
 
     public ArrayList<ThanhVien> getDSThanhVien(){
@@ -77,5 +81,23 @@ public class ThanhVienDao {
             return true;
         }
         return false;
+    }
+
+    public  boolean login(String matt, String matkhau) {
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+        //matt, hoten, matkhau, loaitaikhoan
+        Cursor cursor = db.rawQuery("select * from thanhvien where matv =? and hoten =?", new String[]{matt, matkhau});
+        //cmt login.activity roi mang nos sang day(23-26)
+        if (cursor.getCount() != 0) {
+            cursor.moveToFirst();
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putString("matv", cursor.getString(0));
+            editor.putString("hoten", cursor.getString(1));
+            editor.commit();//luu du lieu
+            return true;
+        } else {
+            return false;
+        }
+
     }
 }

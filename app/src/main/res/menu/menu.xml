@@ -4,6 +4,7 @@
     <item android:id="@+id/loaisach" android:title="Quản lý loại sách"/>
     <item android:id="@+id/sach" android:title="Quản lý sách"/>
     <item android:id="@+id/thanhvien" android:title="Quản lý thành viên"/>
+    <item android:id="@+id/sach_thanhvien" android:title="Kho sách"/>
     <item android:title="Thong ke">
         <menu>
             <item android:id="@+id/top10" android:title="Top 10 bán nhiều nhất"/>

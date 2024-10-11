@@ -10,8 +10,10 @@ import android.util.Log;
 
 import com.example.myapplication.database.DbHelper;
 import com.example.myapplication.model.PhieuMuon;
+import com.example.myapplication.model.Sach;
 
 import java.util.ArrayList;
+import java.util.Collection;
 
 public class PhieuMuonDao {
     private final DbHelper dbHelper;
