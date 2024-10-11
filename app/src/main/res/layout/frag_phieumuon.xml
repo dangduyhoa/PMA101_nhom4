@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:background="@drawable/img_3"
+    android:background="@drawable/t5"
     android:layout_height="match_parent">
 
     <LinearLayout
@@ -10,11 +10,15 @@
         android:orientation="vertical"
         >
         <androidx.appcompat.widget.SearchView
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
             android:id="@+id/search_ctphieumuon"
-            android:layout_width="match_parent"
+            android:layout_width="400dp"
             android:iconifiedByDefault="false"
             android:queryHint="Tim kiem phong ban"
             android:layout_height="match_parent"
+            android:background="@drawable/khung_pm"
+
             />
 
         <androidx.recyclerview.widget.RecyclerView
@@ -22,7 +26,7 @@
             android:layout_gravity="center"
             android:id="@+id/rcvphieumuon"
             android:layout_width="350dp"
-            android:layout_height="685dp"
+            android:layout_height="655dp"
             android:orientation="vertical" />
 
 

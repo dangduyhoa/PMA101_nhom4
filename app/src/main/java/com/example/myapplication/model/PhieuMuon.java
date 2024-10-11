@@ -11,6 +11,9 @@ public class PhieuMuon {
     private int trasach;
     private int tienthue;
 
+
+
+
     public PhieuMuon(int mapm,int matv, String tentv, String matt, int masach, String tensach, String ngay, int trasach, int tienthue) {
         this.mapm = mapm;
         this.matv = matv;
@@ -40,6 +43,9 @@ public class PhieuMuon {
         this.ngay = ngay;
         this.trasach = trasach;
         this.tienthue = tienthue;
+    }
+
+    public PhieuMuon() {
     }
 
     public PhieuMuon(int trasach) {

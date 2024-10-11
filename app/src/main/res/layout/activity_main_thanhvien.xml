@@ -9,8 +9,8 @@
         android:orientation="vertical"
         >
         <androidx.appcompat.widget.SearchView
-            android:layout_marginTop="10dp"
             android:layout_gravity="center"
+            android:layout_marginTop="10dp"
             android:layout_width="400dp"
             android:iconifiedByDefault="false"
             android:queryHint="Tim kiem phong ban"
@@ -24,14 +24,8 @@
             android:layout_width="match_parent"
             android:layout_height="685dp"
             android:orientation="vertical"
-            android:id="@+id/rcvsach"/>
+            android:id="@+id/rcvsach_thanhvien"/>
     </LinearLayout>
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_margin="20dp"
-        android:id="@+id/fltsach"/>
+
 </RelativeLayout>

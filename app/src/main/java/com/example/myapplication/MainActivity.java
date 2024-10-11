@@ -25,6 +25,7 @@ import com.example.myapplication.frag.frag_thanhvien;
 import com.example.myapplication.frag.frag_top19;
 import com.example.myapplication.frag.frg_doanhthufragment;
 import com.example.myapplication.frag.taotaikhoan;
+import com.example.myapplication.thanhvien.fag_sach;
 import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity {
@@ -43,38 +44,40 @@ public class MainActivity extends AppCompatActivity {
         actionBar.setHomeAsUpIndicator(R.drawable.baseline_menu_24);
 
 
-
         nar.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 FragmentManager fragmentManager = getSupportFragmentManager();
-                if(item.getItemId() ==  R.id.phieumuon){
+                if (item.getItemId() == R.id.phieumuon) {
                     Fragment fragment = new frag_phieumuon();
                     fragmentManager.beginTransaction().replace(R.id.framlayout, fragment).commit();
-                }else if (item.getItemId() == R.id.loaisach) {
+                } else if (item.getItemId() == R.id.loaisach) {
                     Fragment fragment = new frag_loaisach();
                     fragmentManager.beginTransaction().replace(R.id.framlayout, fragment).commit();
-                }else if (item.getItemId() == R.id.taotk) {
+                } else if (item.getItemId() == R.id.taotk) {
                     Fragment fragment = new taotaikhoan();
                     fragmentManager.beginTransaction().replace(R.id.framlayout, fragment).commit();
-                }else if (item.getItemId() == R.id.sach) {
+                } else if (item.getItemId() == R.id.sach) {
                     Fragment fragment = new frag_sach();
                     fragmentManager.beginTransaction().replace(R.id.framlayout, fragment).commit();
-                }else if (item.getItemId() == R.id.thanhvien) {
+                } else if (item.getItemId() == R.id.thanhvien) {
                     Fragment fragment = new frag_thanhvien();
                     fragmentManager.beginTransaction().replace(R.id.framlayout, fragment).commit();
-                }else if (item.getItemId() == R.id.matkhau) {
+                } else if (item.getItemId() == R.id.matkhau) {
                     Fragment fragment = new frag_doimk();
                     fragmentManager.beginTransaction().replace(R.id.framlayout, fragment).commit();
-                }else if (item.getItemId() == R.id.top10) {
+                } else if (item.getItemId() == R.id.top10) {
                     Fragment fragment = new frag_top19();
                     fragmentManager.beginTransaction().replace(R.id.framlayout, fragment).commit();
-                }else if (item.getItemId() == R.id.doanhthu) {
+                } else if (item.getItemId() == R.id.doanhthu) {
                     Fragment fragment = new frg_doanhthufragment();
                     fragmentManager.beginTransaction().replace(R.id.framlayout, fragment).commit();
-                }else if (item.getItemId() == R.id.thoat) {
+                } else if (item.getItemId() == R.id.thoat) {
                     startActivity(new Intent(MainActivity.this, dangnhap.class));
-                }else{
+                }else if(item.getItemId() == R.id.sach_thanhvien){
+                    Fragment fragment = new fag_sach();
+                    fragmentManager.beginTransaction().replace(R.id.framlayout, fragment).commit();
+                }else {
                     Fragment fragment = new frag_phieumuon();
                     fragmentManager.beginTransaction().replace(R.id.framlayout, fragment).commit();
                 }
@@ -83,10 +86,13 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
+
+
         SharedPreferences sharedPreferences = getSharedPreferences("Thongtin", MODE_PRIVATE);
         String loaiTK = sharedPreferences.getString("loaitaikhoan", "");
-        if (!loaiTK.equals("admin")){
-            Menu menu = nar.getMenu();
+        Menu menu = null;
+        if (!loaiTK.equals("admin")) {
+            menu = nar.getMenu();
             menu.findItem(R.id.taotk).setVisible(false);
         }
     }

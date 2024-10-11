@@ -61,14 +61,19 @@ public class PhieuMuonAdapter extends RecyclerView.Adapter<PhieuMuonAdapter.view
         if (list.get(position).getTrasach()==1){
             holder.txttrangthai.setTextColor(Color.parseColor("#FF0000"));
         }
-        else {
-
+        else  if (list.get(position).getTrasach()==3) {
+            holder.txttrangthai.setTextColor(Color.parseColor("#9F69FF"));
+        }else  if (list.get(position).getTrasach()==0) {
+            holder.txttrangthai.setTextColor(Color.parseColor("#009700"));
         }
+
 
         if(list.get(position).getTrasach() == 1){
             trangthai ="da tra sach";
-        }else{
+        }else if(list.get(position).getTrasach() == 0){
             trangthai ="chua tra sach";
+        }else if(list.get(position).getTrasach() == 3){
+            trangthai ="cho duyet";
         }
         holder.txttrangthai.setText( trangthai);
         holder.txttien.setText(Integer.toString(list.get(position).getTienthue()));
