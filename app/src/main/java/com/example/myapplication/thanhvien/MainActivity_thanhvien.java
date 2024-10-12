@@ -1,6 +1,9 @@
 package com.example.myapplication.thanhvien;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -33,6 +36,15 @@ public class MainActivity_thanhvien extends AppCompatActivity {
         list = dao.getDSSach();
         adapter = new SachAdapter_thanhvien(this, list);
         rcv.setAdapter(adapter);
+
+        ImageView kho = findViewById(R.id.khoPM);
+        kho.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity_thanhvien.this,phieumuon_thanhvien.class);
+                startActivity(intent);
+            }
+        });
 
     }
 }

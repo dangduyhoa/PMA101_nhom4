@@ -3,8 +3,15 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    android:layout_margin="30dp"
+    android:background="@drawable/b3"
     android:layout_height="match_parent">
+    <LinearLayout
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="30dp"
+        android:orientation="vertical"
+        >
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -38,5 +45,5 @@
             android:id="@+id/doi"
             android:backgroundTint="@color/black"
             android:text="Lưu"/>
-
+    </LinearLayout>
 </LinearLayout>

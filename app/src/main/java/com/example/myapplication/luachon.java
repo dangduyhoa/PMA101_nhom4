@@ -47,7 +47,7 @@ public class luachon extends AppCompatActivity {
                         startActivity(new Intent(luachon.this, dangnhap_thanhvien.class));
 
                     }
-                },1200);
+                },1100);
             }
         });
 

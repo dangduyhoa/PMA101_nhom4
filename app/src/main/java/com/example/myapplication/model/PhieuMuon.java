@@ -13,7 +13,17 @@ public class PhieuMuon {
 
 
 
+    public PhieuMuon(int mapm,int matv, String tentv, String matt, int masach, String ngay, int trasach, int tienthue) {
+        this.mapm = mapm;
+        this.matv = matv;
+        this.tentv = tentv;
+        this.matt = matt;
+        this.masach = masach;
 
+        this.ngay = ngay;
+        this.trasach = trasach;
+        this.tienthue = tienthue;
+    }
     public PhieuMuon(int mapm,int matv, String tentv, String matt, int masach, String tensach, String ngay, int trasach, int tienthue) {
         this.mapm = mapm;
         this.matv = matv;

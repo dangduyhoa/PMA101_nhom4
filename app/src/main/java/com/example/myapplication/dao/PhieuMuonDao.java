@@ -1,9 +1,11 @@
 package com.example.myapplication.dao;
 
+import static android.content.Context.MODE_PRIVATE;
 import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
@@ -17,9 +19,13 @@ import java.util.Collection;
 
 public class PhieuMuonDao {
     private final DbHelper dbHelper;
+    SharedPreferences sharedPreferences;
+    SQLiteDatabase db;
 
     public PhieuMuonDao(Context context) {
         dbHelper  = new DbHelper(context);
+        sharedPreferences = context.getSharedPreferences("pm_tv", MODE_PRIVATE);
+        db = dbHelper.getWritableDatabase();
     }
 
     public ArrayList<PhieuMuon> getDSphieumuon(){
@@ -92,4 +98,26 @@ public class PhieuMuonDao {
         }
          return false;
     }
+
+
+    public ArrayList<PhieuMuon>getDSphieumuon_thanhvien(int id) {
+        ArrayList<PhieuMuon> list = new ArrayList<>();
+        SQLiteDatabase sqLiteDatabase = dbHelper.getReadableDatabase();
+        try {
+            Cursor cursor = sqLiteDatabase.rawQuery("SELECT  pm.mapm, pm.matv, tv.hoten, pm.matt, pm.masach, sc.tensach, pm.ngay, pm.trasach, pm.tienthue" +
+                    " FROM PHIEUMUON pm, THANHVIEN tv, THUTHU tt, SACH sc  WHERE pm.matv = ? and sc.masach = pm.masach and pm.matv = tv.matv", new String[]{String.valueOf(id)});
+            if (cursor.getCount() > 0) {
+                cursor.moveToFirst();
+                while (!cursor.isAfterLast()) {
+                    list.add(new PhieuMuon(cursor.getInt(0), cursor.getInt(1), cursor.getString(2), cursor.getString(3), cursor.getInt(4), cursor.getString(5), cursor.getString(6), cursor.getInt(7), cursor.getInt(8)));
+                    cursor.moveToNext();
+                }
+            }
+            cursor.close(); // Close the cursor to avoid memory leaks
+        } catch (Exception e) {
+            Log.i(TAG, "Error while fetching data", e);
+        }
+        return list;
+    }
+
 }

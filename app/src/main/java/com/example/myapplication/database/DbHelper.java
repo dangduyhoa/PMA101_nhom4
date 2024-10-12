@@ -9,7 +9,7 @@ import androidx.annotation.Nullable;
 public class DbHelper extends SQLiteOpenHelper {
     private static final String DB_name="QLS";
     public DbHelper(@Nullable Context context) {
-        super(context, DB_name, null, 23);
+        super(context, DB_name, null, 26);
     }
 
     @Override
@@ -49,7 +49,6 @@ public class DbHelper extends SQLiteOpenHelper {
         db.execSQL("INSERT INTO sach VALUES (1, 'Vượt qua bản ngã', 2500, 3,'Red',9), (2, 'Java', 1000, 2,'Vang',8), (3, 'Tuổi trẻ băn khoăn', 2000, 4,'Tim',8)");
         db.execSQL("INSERT INTO thuthu VALUES ('ph46289','Duy Hòa','ph46289','admin')");
         db.execSQL("INSERT INTO thanhvien VALUES (1,'Dộ','2004','nam',50000),(2,'Hiếu','2004','nữ',65000),(3,'Thànhh','2004','nữ',65000),(4,'Vũ','2004','nữ',65000),(5,'an','2004','nam',65000)");
-        db.execSQL("INSERT INTO phieumuon VALUES (1,1,'tt1', 1, '12/05/2023', 1, 2003),(2,1,'tt1', 3, '11/05/2023', 0, 2003),(3,2,'tt2', 1, '01/05/2023', 1, 2003)");
     }
 
     @Override
