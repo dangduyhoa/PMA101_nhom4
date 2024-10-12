@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
@@ -9,6 +10,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -73,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
                     Fragment fragment = new frg_doanhthufragment();
                     fragmentManager.beginTransaction().replace(R.id.framlayout, fragment).commit();
                 } else if (item.getItemId() == R.id.thoat) {
-                    startActivity(new Intent(MainActivity.this, dangnhap.class));
+                    showDialog();
                 }else if(item.getItemId() == R.id.sach_thanhvien){
                     Fragment fragment = new fag_sach();
                     fragmentManager.beginTransaction().replace(R.id.framlayout, fragment).commit();
@@ -102,5 +104,27 @@ public class MainActivity extends AppCompatActivity {
             dra.openDrawer(GravityCompat.START);
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    private void showDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("")
+                .setMessage("Xác nhận thoát thành viên")
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        startActivity(new Intent(MainActivity.this, luachon.class));
+                    }
+                });
+        builder.setNegativeButton("Không", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // Xử lý khi người dùng chọn "Không"
+                dialog.dismiss();
+            }
+        });
+        AlertDialog dialog = builder.create();
+        dialog.show(); // Show the dialog
     }
 }

@@ -80,11 +80,11 @@ holder.datPM.setOnClickListener(new View.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
                 int maTv = Integer.parseInt(sharedPreferences.getString("matv",""));
                 String matt = "ph46289";
-                int maSach = Integer.parseInt(holder.txtmasach.getText().toString());
+                int maSach = Integer.parseInt(String.valueOf(list.get(position).getMasach()));
                 Date date = Calendar.getInstance().getTime();
                 SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
                 String ngay = simpleDateFormat.format(date);
-                int giathue = Integer.parseInt(holder.txtgiathue.getText().toString());
+                int giathue = Integer.parseInt(String.valueOf(list.get(position).getGiathue()));
                 PhieuMuon pm = new PhieuMuon(maTv,matt,maSach,ngay,3,giathue);
 
                 PhieuMuonDao dao1 = new PhieuMuonDao(context);
